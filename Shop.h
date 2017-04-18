@@ -32,7 +32,7 @@ class Shop
                 void create_new_order();
                 void save(string filename);
                 void open(string filename);
-                void list_Robot_Parts(int input);
+                void list_Robot_Parts();
 		void list_Robot_Models();
 		void list_Customers();
 		void list_Sales_Associates();

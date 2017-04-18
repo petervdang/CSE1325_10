@@ -30,11 +30,30 @@ void ModelCB(Fl_Widget *w, void *p)
         shop.create_new_robot_model();
 }
 
-void ListCB(Fl_Widget *w, void *p)
+void ListrmCB(Fl_Widget *w, void *p)
 {
-        
+        shop.list_Robot_Models();
 }
 
+void CustomerCB(Fl_Widget *w, void *p)
+{
+	shop.create_new_customer();
+}
+
+void SalesCB(Fl_Widget *w, void *p)
+{
+	shop.create_new_sales_associate();
+}
+
+void ListcCB(Fl_Widget *w, void *p)
+{
+	shop.list_Customers();
+}
+
+void ListsCB(Fl_Widget *w, void *p)
+{
+	shop.list_Sales_Associates();
+}
 
 
 
@@ -45,10 +64,16 @@ Fl_Menu_Item menuitems[] = {
                 { 0 },
 
         {"&Create", 0,0,0, FL_SUBMENU},
-                { "Robot Model", FL_ALT + 'm', (Fl_Callback *) ModelCB},
+                { "&Robot Model", FL_ALT + 'm', (Fl_Callback *) ModelCB},
                 { "&Robot Component", FL_ALT + 'c', (Fl_Callback *) ComponentCB},
-                { "&List Components", FL_ALT + 'l', (Fl_Callback *) ListCB},
+		{ "&Beloved Customer", FL_ALT + 'b', (Fl_Callback *) CustomerCB},
+		{ "&Sales Associate", FL_ALT + 'a', (Fl_Callback *) SalesCB},
                 { 0 },
+	{"&List", 0,0,0, FL_SUBMENU},
+		{ "&Robot Models", FL_ALT + 'l', (Fl_Callback *) ListrmCB},
+		{ "&Customers", FL_ALT + 'z', (Fl_Callback *) ListcCB},
+		{ "&Sales Associate", FL_ALT + 'x', (Fl_Callback *) ListsCB},
+		{ 0 },
         { 0 }
 };
 
